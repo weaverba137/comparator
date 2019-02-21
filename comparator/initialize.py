@@ -12,6 +12,7 @@ from sqlalchemy import create_engine, func
 from .db import engine, Session, Base, FileSystem, Directory, File
 from .find import directories, files
 
+
 def _options():
     """Parse the command-line options.
 
@@ -26,9 +27,9 @@ def _options():
     prsr = ArgumentParser(description=desc, prog=xct)
     prsr.add_argument('-f', '--filesystem', action='append',
                       dest='filesystem', metavar="DIR",
-                      help='Filesysem(s) to examine.')
+                      help='FileSystem(s) to examine.')
     prsr.add_argument('-F', '--skip-files', action='store_true',
-                      dest='skip_files', help='Skip the file scan stage.')
+                      dest='skip_files', help='Skip the file search stage.')
     # prsr.add_argument('-l', '--log-dir', dest='logging', metavar='DIR',
     #                   default=os.path.join(os.environ['HOME'], 'Documents', 'Logs'),
     #                   help='Log files in DIR (default %(default)s).')
