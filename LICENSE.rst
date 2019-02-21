@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2019, Benjamin Alan Weaver
+Copyright (c) 2019, Benjamin Alan Weaver <baweaver@lbl.gov>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
