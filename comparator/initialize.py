@@ -22,7 +22,8 @@ def _options():
     from sys import argv
     from argparse import ArgumentParser
     xct = os.path.basename(argv[0])
-    prsr = ArgumentParser(description=__doc__, prog=xct)
+    desc = "Obtain filesystem metadata necessary for comparing the same data set at different locations."
+    prsr = ArgumentParser(description=desc, prog=xct)
     prsr.add_argument('-f', '--filesystem', action='append',
                       dest='filesystem', metavar="DIR",
                       help='Filesysem(s) to examine.')
