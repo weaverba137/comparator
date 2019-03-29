@@ -9,6 +9,7 @@ at different locations.
 """
 import os
 from sqlalchemy import create_engine, func
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 from .db import engine, Session, Base, FileSystem, Directory, File
 from .find import directories, files
 
