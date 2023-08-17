@@ -14,7 +14,7 @@
 
 import sys
 import os
-# import comparator
+from importlib import import_module
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -64,14 +64,13 @@ master_doc = 'index'
 # General information about the project.
 project = u'comparator'
 author = 'Benjamin Alan Weaver'
-copyright = u'2019, Benjamin Alan Weaver'
+copyright = u'2019-2023, Benjamin Alan Weaver'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 
-__import__(project)
-package = sys.modules[project]
+package = import_module(project)
 
 # The short X.Y version.
 version = package.__version__.split('-', 1)[0]
@@ -118,6 +117,16 @@ keep_warnings = False
 
 # Include functions that begin with an underscore, e.g. _private().
 napoleon_include_private_with_doc = True
+
+# This value contains a list of modules to be mocked up. This is useful when
+# some external dependencies are not met at build time and break the
+# building process.
+autodoc_mock_imports = []
+for missing in ('sqlalchemy', ):
+    try:
+        foo = import_module(missing)
+    except ImportError:
+        autodoc_mock_imports.append(missing)
 
 # -- Options for HTML output ----------------------------------------------
 
