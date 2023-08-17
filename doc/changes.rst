@@ -2,7 +2,7 @@
 Release Notes
 =============
 
-0.1.0 (unreleased)
+0.1.0 (2023-08-17)
 ------------------
 
-* Initial release.  Used to scan all SDSS data.
+* Initial release to establish package infrastructure.
